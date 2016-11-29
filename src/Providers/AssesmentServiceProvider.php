@@ -3,6 +3,7 @@
 namespace Scool\Assesments\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Scool\Assesments\Models\ScoolAssesments;
 
 class AssesmentServiceProvider extends ServiceProvider
 {
@@ -13,7 +14,10 @@ class AssesmentServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->loadMigrations();
+        $this->publishFactories();
+
+
     }
 
     /**
@@ -23,6 +27,26 @@ class AssesmentServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        if (!defined('SCOOL_ASSESMENT_PATH')) {
+            define('SCOOL_ASSESMENT_PATH', realpath(__DIR__ . '/../../'));
+        }
+    }
+
+    private function loadMigrations()
+    {
+
+        $this->loadMigrationsFrom(SCOOL_ASSESMENT_PATH . '/database/migrations');
+
+
+    }
+
+    private function publishFactories()
+    {
+
+        $this->publishes(
+            ScoolAssesments::factories(), "scool_assesments"
+        );
+
+
     }
 }
