@@ -17,8 +17,20 @@ class AssesmentServiceProvider extends ServiceProvider
         $this->loadMigrations();
         $this->publishFactories();
         $this->publishConfigs();
+        $this->defineRoutes();
 
 
+    }
+
+    protected function defineRoutes()
+    {
+        if (!$this->app->routesAreCached()) {
+            $router = app('router');
+
+            $router->group(['namespace' => 'Scool\Assesments\Http\Controllers'], function () {
+                require __DIR__.'/../Http/routes.php';
+            });
+        }
     }
 
     /**
