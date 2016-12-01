@@ -17,6 +17,6 @@ class AssesmentsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Assesment::class,1)->create();
+        factory(Assesment::class,8)->create();
     }
 }

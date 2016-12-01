@@ -13,6 +13,10 @@ namespace Scool\Assesments\Models;
  * Class ScoolAssesments
  * @package Scool\Assesments\Models
  */
+/**
+ * Class ScoolAssesments
+ * @package Scool\Assesments\Models
+ */
 class ScoolAssesments
 {
 
@@ -32,6 +36,22 @@ class ScoolAssesments
 
 
         ];
+    }
+
+    /**
+     * @return array
+     */
+    public static function config()
+    {
+
+        return [
+
+            SCOOL_ASSESMENT_PATH . '/config/assesments.php' =>
+                config_path('assesments.php'),
+
+        ];
+
+
     }
 
 

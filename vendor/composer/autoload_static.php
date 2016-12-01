@@ -57,6 +57,8 @@ class ComposerStaticInit9d6864404233d9f062da9f645a9cce12
         array (
             'Psy\\' => 4,
             'Psr\\Log\\' => 8,
+            'Prettus\\Validator\\' => 18,
+            'Prettus\\Repository\\' => 19,
             'PhpParser\\' => 10,
         ),
         'M' => 
@@ -175,6 +177,14 @@ class ComposerStaticInit9d6864404233d9f062da9f645a9cce12
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
+        'Prettus\\Validator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/prettus/laravel-validation/src/Prettus/Validator',
+        ),
+        'Prettus\\Repository\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/prettus/l5-repository/src/Prettus/Repository',
         ),
         'PhpParser\\' => 
         array (

@@ -16,6 +16,7 @@ class AssesmentServiceProvider extends ServiceProvider
     {
         $this->loadMigrations();
         $this->publishFactories();
+        $this->publishConfigs();
 
 
     }
@@ -46,6 +47,17 @@ class AssesmentServiceProvider extends ServiceProvider
         $this->publishes(
             ScoolAssesments::factories(), "scool_assesments"
         );
+
+
+    }
+
+    public function publishConfigs()
+    {
+
+        $this->publishes(
+            ScoolAssesments::config(), "scool_assesments"
+        );
+
 
 
     }
