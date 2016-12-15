@@ -2,6 +2,7 @@
 
 namespace Scool\Assesments\Providers;
 
+use Acacha\Names\Providers\NamesServiceProvider;
 use Illuminate\Support\ServiceProvider;
 use Scool\Assesments\Models\ScoolAssesments;
 
@@ -46,6 +47,10 @@ class AssesmentServiceProvider extends ServiceProvider
 
         $this->app->bind(\Scool\Assesments\Repositories\AssesmentRepository::class, \Scool\Assesments\Repositories\AssesmentRepositoryEloquent::class);
 
+
+        $this->registerNameServiceProvider();
+
+
     }
 
     private function loadMigrations()
@@ -75,5 +80,13 @@ class AssesmentServiceProvider extends ServiceProvider
 
 
 
+    }
+
+    /**
+     *
+     */
+    public function registerNameServiceProvider()
+    {
+        $this->app->register(NamesServiceProvider::class);
     }
 }
