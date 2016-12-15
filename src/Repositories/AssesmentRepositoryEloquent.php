@@ -4,8 +4,6 @@ namespace Scool\Assesments\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-
-
 use Scool\Assesments\Models\Assesment;
 use Scool\Assesments\Validators\AssesmentValidator;
 

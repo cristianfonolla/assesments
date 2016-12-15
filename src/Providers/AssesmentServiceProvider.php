@@ -43,6 +43,9 @@ class AssesmentServiceProvider extends ServiceProvider
         if (!defined('SCOOL_ASSESMENT_PATH')) {
             define('SCOOL_ASSESMENT_PATH', realpath(__DIR__ . '/../../'));
         }
+
+        $this->app->bind(\Scool\Assesments\Repositories\AssesmentRepository::class, \Scool\Assesments\Repositories\AssesmentRepositoryEloquent::class);
+
     }
 
     private function loadMigrations()
